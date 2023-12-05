@@ -16,12 +16,27 @@
   }
 }
 
-/* body {
-  color: rgb(var(--foreground-rgb));
+body {
+  background: #081b29;
+  color: #ededed;
+}
+
+.section {
+  @apply py-8 lg:py-24 lg:h-screen flex items-center;
+}
+
+.gradient,
+.active {
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
+    92.23deg,
+    #406aff 21.43%,
+    #3bace2 50.63%,
+    #b936ee 100%,
+    #ff56f6 117.04%
+  );
+}
+.active {
+  color: #fff;
+  padding: 1rem;
+  border-radius: 100%;
+}
