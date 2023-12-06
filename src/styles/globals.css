@@ -17,7 +17,7 @@
 }
 
 body {
-  background: #081b29;
+  background: linear-gradient(to bottom, #713fc0 0%, #b23fc0 50%, #3f4dc0 100%);
   color: #ededed;
 }
 
