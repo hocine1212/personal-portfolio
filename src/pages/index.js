@@ -7,13 +7,13 @@ import Projects from "@/components/Projects/Projects";
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-hidden">
       <Header />
       <Banner />
       <Navbar />
       <About />
       <Projects />
       <Contact />
-    </>
+    </div>
   );
 }
