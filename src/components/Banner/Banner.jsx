@@ -52,12 +52,14 @@ const Banner = () => {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="flex max-w-max gap-x-6 mb-12 mx-auto lg:mx-0 items-center"
+              className="flex max-w-max gap-x-6 mb-8 mx-auto lg:mx-0 items-center"
             >
               <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 px-3 font-bold py-2 rounded-full transition-all duration-300 ">
                 Contact me
               </button>
-              <Link href="#">My Portfolio</Link>
+              <Link className="text-gradient" href="#">
+                My Portfolio
+              </Link>
             </motion.div>
             <motion.div
               variants={fadeIn("up", 0.7)}
