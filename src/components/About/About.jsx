@@ -16,7 +16,7 @@ const About = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 bg-about bg-contain bg-no-repeat lg:bg-cover lg:h-[500px]  mix-blend-lighten bg-top"
+            className="flex-1 bg-about bg-cover  bg-no-repeat  h-[480px]  mix-blend-lighten bg-center"
           ></motion.div>
           <motion.div
             variants={fadeIn("left", 0.5)}
@@ -25,7 +25,7 @@ const About = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="flex-1"
           >
-            <h2 className="h2 text-[#42c0fa]">About me</h2>
+            <h2 className="h2 text-[#42c0fa] font-semibold">About me</h2>
             <h3 className="h3">
               I'm a Front-end developer with more than one year experience
             </h3>
@@ -62,7 +62,7 @@ const About = () => {
               </div>
             </div>
             <div className="flex gap-x-8 items-center">
-              <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 px-3 font-bold py-2 rounded-full transition-all duration-300 ">
+              <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 px-5 font-bold py-2 rounded-full transition-all duration-300 ">
                 Contact me
               </button>
               <Link className="text-gradient" href="#">
