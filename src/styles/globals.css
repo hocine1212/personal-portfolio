@@ -19,7 +19,7 @@
 body {
   background: linear-gradient(to bottom, #713fc0 0%, #b23fc0 50%, #3f4dc0 100%);
 
-  @apply font-secondary text-white;
+  @apply font-secondary text-[16px] text-white;
 }
 
 .h2 {
@@ -30,7 +30,7 @@ body {
   @apply font-primary font-semibold text-[22px] mb-2 leading-[35px];
 }
 .section {
-  @apply py-8 lg:py-24 lg:h-screen flex items-center;
+  @apply my-8 lg:py-24 lg:h-screen flex items-center;
 }
 
 .gradient,
