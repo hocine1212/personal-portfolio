@@ -45,8 +45,8 @@ const Projects = () => {
               Work
             </h2>
             <p className="max-w-sm mb-16 font-semibold">
-              Those are some of my project i worked on during my time in the
-              Re:coded bootcamp!
+              Explore my recent projects from the Re:Coded Bootcamp, showcasing
+              my skills in web development.
             </p>
             <Link
               href="https://github.com/hocine1212?tab=repositories"
