@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { fadeIn } from "../Animation/variants";
-import Link from "next/link";
+
+import { Link } from "react-scroll";
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -27,13 +28,14 @@ const About = () => {
           >
             <h2 className="h2 text-[#42c0fa] font-semibold">About me</h2>
             <h3 className="h3">
-              I'm a Front-end developer with more than one year experience
+              I'm a Front-end developer with more than a year of experience
             </h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              animi dolor quasi non, ad assumenda commodi? Impedit, aspernatur
-              quo laudantium, architecto nam saepe culpa reprehenderit iusto
-              sint voluptates est voluptatem.
+              I'm a passionate front-end developer based in Algeria. My name is
+              Hocine Benouddane, and I specialize in creating captivating user
+              experiences. With a background in Mechanical Engineering, I made a
+              successful transition to web development, graduating from the
+              Re:Coded bootcamp.
             </p>
             <div className="flex gap-x-6 lg:gap-x-10 mb-6">
               <div>
@@ -62,10 +64,21 @@ const About = () => {
               </div>
             </div>
             <div className="flex gap-x-8 items-center">
-              <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 px-5 font-bold py-2 rounded-full transition-all duration-300 ">
+              <Link
+                to="contact"
+                smooth={true}
+                spy={true}
+                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 px-5 font-bold py-2 cursor-pointer rounded-full transition-all duration-300"
+              >
                 Contact me
-              </button>
-              <Link className="text-gradient" href="#">
+              </Link>
+              <Link
+                to="home"
+                smooth={true}
+                spy={true}
+                offset={-200}
+                className="text-gradient cursor-pointer"
+              >
                 My Portfolio
               </Link>
             </div>

@@ -1,5 +1,5 @@
 import { BiHomeAlt, BiUser } from "react-icons/bi";
-import { BsBriefcase, BsChatSquareText, BsClipboardData } from "react-icons/bs";
+import { BsChatSquareText, BsClipboardData } from "react-icons/bs";
 
 import { Link } from "react-scroll";
 
@@ -38,9 +38,9 @@ const Navbar = () => {
           </Link>
           <Link
             to="contact"
-            activeClass="active"
             smooth={true}
             spy={true}
+            activeClass="active"
             className="cursor-pointer  w-[60px] h-[60px] flex items-center justify-center "
           >
             <BsChatSquareText />

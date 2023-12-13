@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { fadeIn } from "../Animation/variants";
+import { Link as ScrollLink } from "react-scroll";
 
 const Banner = () => {
   return (
@@ -44,8 +45,8 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="mb-8 max-w-lg mx-auto lg:mx-0"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-              temporibus quia totam quisquam est enim, voluptatum hic minima.
+              I'm a Front-End Developer proficient in Next.js, React.js and
+              Tailwind CSS with a background in Mechanical Engineering.
             </motion.p>
             <motion.div
               variants={fadeIn("up", 0.6)}
@@ -54,12 +55,23 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="flex max-w-max gap-x-6 mb-6 mx-auto lg:mx-0 items-center"
             >
-              <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 px-3 font-bold py-2 rounded-full transition-all duration-300 ">
+              <ScrollLink
+                to="contact"
+                smooth={true}
+                spy={true}
+                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 px-3 font-bold py-2 rounded-full transition-all duration-300 cursor-pointer "
+              >
                 Contact me
-              </button>
-              <Link className="text-gradient" href="#">
+              </ScrollLink>
+              <ScrollLink
+                to="home"
+                smooth={true}
+                spy={true}
+                offset={-200}
+                className="text-gradient cursor-pointer"
+              >
                 My Portfolio
-              </Link>
+              </ScrollLink>
             </motion.div>
             <motion.div
               variants={fadeIn("up", 0.7)}

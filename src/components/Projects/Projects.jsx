@@ -5,20 +5,28 @@ import project1Img from "../../../public/project1.png";
 import project2Img from "../../../public/project2.png";
 import project3Img from "../../../public/project3.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Projects = () => {
   const projects = [
     {
       title: "Student store",
-      image: project1Img, // Replace with the actual path to the image
+      image: project1Img,
+      github: "https://github.com/202306-NEA-DZ-FEW/StudentStore",
+      demo: "https://studentsstore.vercel.app",
     },
     {
       title: "MoviPlaza",
-      image: project2Img, // Replace with the actual path to the image
+      image: project2Img,
+
+      github: "https://github.com/202306-NEA-DZ-FEW/movie-project-team_404",
+      demo: "https://movie-project-team-404.vercel.app",
     },
     {
       title: "Jumanji Mad-libs",
-      image: project3Img, // Replace with the actual path to the image
+      image: project3Img,
+      github: "https://github.com/202306-NEA-DZ-FEW/madlibs-miami-team",
+      demo: "https://jumanji-mad-libs.netlify.app",
     },
   ];
 
@@ -26,24 +34,35 @@ const Projects = () => {
     <section className="section" id="projects">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-10">
-          <div>
+          <motion.div
+            variants={fadeIn("right", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
+          >
             <h2 className="h2 leading-tight text-[#29f0f0] font-semibold">
               My Latest <br />
               Work
             </h2>
             <p className="max-w-sm mb-16 font-semibold">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, ex
-              quae autem repellat aliquam dignissimos incidunt cum debitis
-              aperiam placeat atque quia vero ab blanditiis doloremque deserunt.
-              Iure, architecto labore!
+              Those are some of my project i worked on during my time in the
+              Re:coded bootcamp!
             </p>
-            <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 px-5 font-bold py-2 rounded-full transition-all duration-300 ">
+            <Link
+              href="https://github.com/hocine1212?tab=repositories"
+              target="_blank"
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 px-5 font-bold py-2 rounded-full transition-all duration-300 "
+            >
               View all projects
-            </button>
-          </div>
+            </Link>
+          </motion.div>
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={fadeIn("left", 0.2)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.3 }}
               className="group relative overflow-hidden border-2 border-white/50 rounded-xl"
             >
               {/* overlay */}
@@ -54,12 +73,28 @@ const Projects = () => {
                 alt={project.title}
               />
               <div className="absolute -bottom-full left-12  group-hover:bottom-24 transition-all duration-500 z-50 ">
-                <span className="text-gradient">Web Development</span>
+                <span className="">
+                  <Link
+                    className="text-gradient"
+                    href={project.github}
+                    target="_blank"
+                  >
+                    Github
+                  </Link>{" "}
+                  |{" "}
+                  <Link
+                    className="text-gradient"
+                    href={project.demo}
+                    target="_blank"
+                  >
+                    Demo
+                  </Link>
+                </span>
               </div>
               <div className="absolute -bottom-full left-12  group-hover:bottom-14 transition-all duration-700 z-50">
                 <span className="text-3xl text-white">{project.title}</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
