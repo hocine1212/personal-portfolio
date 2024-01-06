@@ -114,6 +114,7 @@ const Banner = () => {
               className="object-cover rounded-full w-[300px] h-[300px]"
               src={image}
               alt="profile picture"
+              priority
             />
           </motion.div>
         </div>
