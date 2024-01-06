@@ -5,12 +5,12 @@ const Header = () => {
     <header className="py-4 ">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
-          <Link
+          <h2
             className="text-3xl text-white font-primary font-extrabold hover:underline focus:outline-none focus:ring focus:border-blue-300 
             "
           >
             <span>&lt;&gt; </span>Hocine.
-          </Link>
+          </h2>
           <Link
             to="contact"
             smooth={true}

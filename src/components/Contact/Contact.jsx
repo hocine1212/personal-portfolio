@@ -2,12 +2,20 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { fadeIn } from "../Animation/variants";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
+    const userName = form.current.user_name.value;
+    const userEmail = form.current.user_email.value;
+    const message = form.current.message.value;
+    if (!userName || !userEmail || !message) {
+      toast.error("Please fill in all fields");
+      return;
+    }
 
     emailjs
       .sendForm(
@@ -17,12 +25,12 @@ const Contact = () => {
         process.env.NEXT_PUBLIC_EMAILJS_USER_ID
       )
       .then(
-        (result) => {
-          console.log(result.text);
-          console.log("message sent");
+        () => {
+          toast.success("message sent");
+          form.current.reset();
         },
         (error) => {
-          console.log(error.text);
+          toast.error(error);
         }
       );
   };
