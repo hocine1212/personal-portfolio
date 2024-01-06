@@ -1,8 +1,30 @@
-import React from "react";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { fadeIn } from "../Animation/variants";
 import { motion } from "framer-motion";
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        form.current,
+        "YOUR_PUBLIC_KEY"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <div className="py-16 lg:section" id="contact">
       <div className="container mx-auto">
@@ -32,24 +54,33 @@ const Contact = () => {
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
             className="flex-1 border rounded-2xl flex flex-col gap-y-6 pb-24 p-6 items-start"
+            ref={form}
+            onSubmit={sendEmail}
           >
             <input
               className="bg-transparent border-b py-3 outline-none placeholder:text-white w-full focus:border-[#29f0f0] transition-all"
               type="text"
               placeholder="Your name"
+              name="user_name"
             />
             <input
               className="bg-transparent border-b py-3 outline-none placeholder:text-white w-full focus:border-[#29f0f0] transition-all"
               type="text"
               placeholder="Your email"
+              name="user_email"
             />
             <textarea
               className="bg-transparent border-b py-12 outline-none placeholder:text-white w-full focus:border-[#29f0f0] transition-all resize-none mb-12"
               placeholder="Your message"
+              name="message"
             ></textarea>
-            <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 px-5 font-bold py-2 rounded-full transition-all duration-300">
+            <input
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 px-5 font-bold py-2 rounded-full transition-all duration-300"
+              type="submit"
+              value="Send"
+            >
               Send message
-            </button>
+            </input>
           </motion.form>
         </div>
       </div>
