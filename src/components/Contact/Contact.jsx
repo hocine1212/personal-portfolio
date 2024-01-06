@@ -11,14 +11,15 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         form.current,
-        "YOUR_PUBLIC_KEY"
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID
       )
       .then(
         (result) => {
           console.log(result.text);
+          console.log("message sent");
         },
         (error) => {
           console.log(error.text);
@@ -74,13 +75,13 @@ const Contact = () => {
               placeholder="Your message"
               name="message"
             ></textarea>
-            <input
+            <button
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 px-5 font-bold py-2 rounded-full transition-all duration-300"
               type="submit"
               value="Send"
             >
               Send message
-            </input>
+            </button>
           </motion.form>
         </div>
       </div>
