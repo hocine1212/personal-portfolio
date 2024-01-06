@@ -35,7 +35,7 @@ const Contact = () => {
       );
   };
   return (
-    <div className="py-16 lg:section" id="contact">
+    <div className="py-20 lg:section" id="contact">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">
           {/* text */}

@@ -32,8 +32,8 @@ const Projects = () => {
 
   return (
     <section className="section" id="projects">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-10">
+      <div className="container mx-auto  h-screen lg:max-h-screen ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2  gap-10">
           <motion.div
             variants={fadeIn("right", 0.2)}
             initial="hidden"
