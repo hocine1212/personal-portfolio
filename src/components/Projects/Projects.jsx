@@ -32,15 +32,15 @@ const Projects = () => {
 
   return (
     <section className="section" id="projects">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-10">
+      <div className="container mx-auto  h-screen lg:max-h-screen ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mt-2 gap-10">
           <motion.div
             variants={fadeIn("right", 0.2)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
           >
-            <h2 className="h2 leading-tight text-[#29f0f0] font-semibold">
+            <h2 className="h2  leading-tight text-[#29f0f0] font-semibold">
               My Latest <br />
               Work
             </h2>
