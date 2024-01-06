@@ -14,7 +14,6 @@ export default function Home() {
       <About />
       <Projects />
       <Contact />
-      <div className="h-[4000px]"></div>
     </div>
   );
 }
